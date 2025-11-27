@@ -3,6 +3,8 @@
 ##  Kroki
 
 - https://kroki.io/
+- https://github.com/yuzutech/kroki
+- https://docs.kroki.io/kroki/
 
 Creates diagrams from textual descriptions!
 
@@ -18,4 +20,13 @@ docker compose up -d
 
 ```bash
 docker compose down -v
+```
+
+## Kroki CLI
+- https://github.com/yuzutech/kroki-cli
+
+kroki.yml
+```yml
+endpoint: 'http://localhost:8000'
+timeout: 30s
 ```
