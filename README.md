@@ -22,6 +22,14 @@ docker compose up -d
 docker compose down -v
 ```
 
+Get system info
+```bash
+curl -s http://localhost:8000/health
+```
+
+```json
+{"version":{"actdiag":"3.1.0","bpmn":"18.6.1","pikchr":"7269f78c4a","nwdiag":"3.1.0","c4plantuml":"1.2025.2","rackdiag":"3.1.0","dot":"9.0.0","symbolator":"1.2.2","d2":"0.7.0","tikz":"3.1.9a","mermaid":"11.6.0","erd":"0.2.3","graphviz":"9.0.0","vegalite":"5.23.0","ditaa":"1.0.3","kroki":{"number":"0.28.0","build_hash":"1529df2"},"umlet":"15.1","diagramsnet":"16.2.4","plantuml":"1.2025.2","seqdiag":"3.1.0","nomnoml":"1.7.0","wavedrom":"3.5.0","structurizr":"3.0.0","bytefield":"1.11.0","wireviz":"0.3.3","excalidraw":"0.18.0","dbml":"1.0.30","packetdiag":"3.1.0","svgbob":"0.7.6","vega":"5.33.0","blockdiag":"3.1.0"},"status":"pass"}
+```
 ## Kroki CLI
 - https://github.com/yuzutech/kroki-cli
 - https://docs.kroki.io/kroki/setup/kroki-cli/
@@ -40,9 +48,15 @@ set KROKI_TIMEOUT=15s
 ```
 
 ## Kroki POST
+HTTP Clients
+- https://docs.kroki.io/kroki/setup/http-clients/
 
 ```bash
 curl -X POST -H "Content-Type: text/plain" --data-binary "@tests/hello.dot" http://localhost:8000/graphviz/svg
+```
+
+```bash
+curl http://localhost:8000/graphviz/svg --data-raw "digraph G {Hello->World}"
 ```
 
 ```bash
