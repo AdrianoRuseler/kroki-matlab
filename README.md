@@ -24,9 +24,36 @@ docker compose down -v
 
 ## Kroki CLI
 - https://github.com/yuzutech/kroki-cli
+- https://docs.kroki.io/kroki/setup/kroki-cli/
 
 kroki.yml
 ```yml
 endpoint: 'http://localhost:8000'
 timeout: 30s
+```
+
+Set the Environment Variables
+
+```bash
+set KROKI_ENDPOINT=http://localhost:8000
+set KROKI_TIMEOUT=15s
+```
+
+## Kroki POST
+
+```bash
+curl -X POST -H "Content-Type: text/plain" --data-binary "@tests/hello.dot" http://localhost:8000/graphviz/svg
+```
+
+```bash
+# Saves the output to diagram.svg
+curl -X POST -H "Content-Type: text/plain" --data-binary "@tests/hello.dot" http://localhost:8000/graphviz/svg > tests/hello.svg
+```
+
+## Base64
+
+- https://di-mgt.com.au/base64-for-windows.html
+
+```bash
+curl -X POST -H "Content-Type: text/plain" --data-binary "@tests/hello.dot" http://localhost:8000/graphviz/svg | base64
 ```
