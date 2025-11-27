@@ -10,6 +10,8 @@ Kroki provides a unified API with support for BlockDiag (BlockDiag, SeqDiag, Act
 
 ## kroki-api
 
+- http://localhost:8000/
+
 ```bash
 docker compose up -d
 ```
