@@ -17,8 +17,8 @@ disp('--- All Tool Versions ---');
 for i = 1:length(toolNames)
     tool = toolNames{i};
 
-    % Use getfield() to retrieve the value using the tool name variable
-    toolVersion = getfield(versionStruct, tool);
+    % Retrieve the value using the tool name variable
+    toolVersion = versionStruct.(tool);
 
     % Handle the nested 'kroki' field which is another structure
     if isstruct(toolVersion)
@@ -26,7 +26,13 @@ for i = 1:length(toolNames)
     end
 
     disp([tool, ': ', toolVersion]);
+
+    targetDir = fullfile('tests/', tool);
+    if ~isfolder(targetDir)
+        mkdir(targetDir);
+    end
 end
+
 
 
 %% POST
@@ -37,7 +43,9 @@ end
 % curl_command = 'curl -s -X POST -H "Content-Type: text/plain" --data-binary "@tests/hello.dot" http://localhost:8000/graphviz/svg';
 
 curl_command = 'curl -s -X POST -H "Content-Type: text/plain" --data-binary "@tests/hello.dot" http://localhost:8000/graphviz/svg';
-% curl_command = 'curl -s -X POST -H "Content-Type: text/plain" --data-binary "@tests/directional-angles.tex" http://localhost:8000/tikz/svg';
+% curl_command = 'curl -s -X POST -H "Content-Type: text/plain" --data-binary "@tests/tikz/directional-angles.tex" http://localhost:8000/tikz/svg';
+
+curl_command = 'curl -s -X POST -H "Content-Type: text/plain" --data-binary "@tests/mermaid/flowchart.mmd" http://localhost:8000/mermaid/svg';
 
 % 2. Run the command
 [status, cmdout] = system(curl_command);
@@ -52,13 +60,21 @@ else
     disp(cmdout);
 end
 
+% 1. Encoding a string
+encoded_string = matlab.net.base64encode(cmdout);
+disp(encoded_string);
 
+% imgstr=['<img width="119px" height="155px" src="data:image/svg+xml;base64,' encoded_string '">'];
+imgstr=['<img src="data:image/svg+xml;base64,' encoded_string '">'];
+% 2. Copy the variable's content to the clipboard
+clipboard('copy', imgstr);
 
 %% CLI
 
 % HTML Image
 [status, cmdout] = system('kroki version');
-[status, cmdout] = system('kroki convert -t tikz tests/directional-angles.tex');
+[status, cmdout] = system('kroki convert -t tikz tests/tikz/directional-angles.tex');
+[status, cmdout] = system('kroki convert -t mermaid tests/mermaid/flowchart.mmd');
 
 [status, cmdout] = system('kroki encode tests/directional-angles.svg');
 
