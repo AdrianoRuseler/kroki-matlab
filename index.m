@@ -34,7 +34,6 @@ for i = 1:length(toolNames)
 end
 
 
-
 %% POST
 
 % 1. Construct your full curl command as a string
@@ -46,6 +45,9 @@ curl_command = 'curl -s -X POST -H "Content-Type: text/plain" --data-binary "@te
 % curl_command = 'curl -s -X POST -H "Content-Type: text/plain" --data-binary "@tests/tikz/directional-angles.tex" http://localhost:8000/tikz/svg';
 
 curl_command = 'curl -s -X POST -H "Content-Type: text/plain" --data-binary "@tests/mermaid/flowchart.mmd" http://localhost:8000/mermaid/svg';
+
+
+curl_command = 'curl -s -X POST -H "Content-Type: text/plain" --data-binary "@tests/blockdiag/simple.diag" http://localhost:8000/blockdiag/svg';
 
 % 2. Run the command
 [status, cmdout] = system(curl_command);
@@ -62,7 +64,7 @@ end
 
 % 1. Encoding a string
 encoded_string = matlab.net.base64encode(cmdout);
-disp(encoded_string);
+% disp(encoded_string);
 
 % imgstr=['<img width="119px" height="155px" src="data:image/svg+xml;base64,' encoded_string '">'];
 imgstr=['<img src="data:image/svg+xml;base64,' encoded_string '">'];
