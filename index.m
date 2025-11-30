@@ -33,6 +33,44 @@ for i = 1:length(toolNames)
     end
 end
 
+% Create README.md file in each targetDir
+for i = 1:length(toolNames)
+    tool = toolNames{i};
+    targetDir = fullfile('tests/', tool);
+    readmePath = fullfile(targetDir, 'README.md');
+    disp(readmePath)
+    fid = fopen(readmePath, 'w');
+    if fid ~= -1
+        toolVersion = versionStruct.(tool);
+        % Handle the nested 'kroki' field which is another structure
+        if isstruct(toolVersion)
+            fprintf(fid, '# %s\n\nVersion: %s\n', tool, toolVersion.number);
+        else
+            fprintf(fid, '# %s\n\nVersion: %s\n', tool, toolVersion);
+        end
+
+        
+        fclose(fid);
+    else
+        disp(['Error creating README.md for ', tool]);
+    end
+end
+
+% Prepare to execute the curl commands for each tool
+for i = 1:length(toolNames)
+    tool = toolNames{i};
+    curl_command = sprintf('curl -s -X POST -H "Content-Type: text/plain" --data-binary "@tests/%s/input.dot" http://localhost:8000/%s/svg', tool,tool);
+
+    % Run the command for each tool
+    [status, cmdout] = system(curl_command);
+
+    if status == 0
+        disp(['Curl command for ', tool, ' executed successfully.']);
+    else
+        disp(['Error executing curl command for ', tool, '. Status: ', num2str(status)]);
+    end
+end
+
 
 %% POST
 
@@ -48,6 +86,12 @@ curl_command = 'curl -s -X POST -H "Content-Type: text/plain" --data-binary "@te
 
 
 curl_command = 'curl -s -X POST -H "Content-Type: text/plain" --data-binary "@tests/blockdiag/simple.diag" http://localhost:8000/blockdiag/svg';
+
+
+
+curl_command = 'curl -s -X POST -H "Content-Type: text/plain" --data-binary "@tests/bpmn/pizza-collaboration.bpmn" http://localhost:8000/bpmn/svg';
+
+
 
 % 2. Run the command
 [status, cmdout] = system(curl_command);
@@ -83,10 +127,10 @@ clipboard('copy', imgstr);
 [status, cmdout] = system('kroki encode -h');
 
 % 'Convert text diagram to image
-% 
+%
 % Usage:
 % kroki convert file [flags]
-% 
+%
 % Flags:
 % -c, --config string     alternate config file [env KROKI_CONFIG]
 % -f, --format string     output format [base64 jpeg pdf png svg] (default: infer from output file extension otherwise svg)

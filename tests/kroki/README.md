@@ -1,0 +1,3 @@
+# kroki
+
+Version: 0.28.0
