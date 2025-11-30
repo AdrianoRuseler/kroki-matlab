@@ -1,1 +1,6 @@
+# MATLAB
+*.mex*
+*.mat
+*.fig
+*.mlx
 *.asv

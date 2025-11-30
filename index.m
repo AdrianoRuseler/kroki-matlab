@@ -49,7 +49,7 @@ for i = 1:length(toolNames)
             fprintf(fid, '# %s\n\nVersion: %s\n', tool, toolVersion);
         end
 
-        
+
         fclose(fid);
     else
         disp(['Error creating README.md for ', tool]);
@@ -91,6 +91,8 @@ curl_command = 'curl -s -X POST -H "Content-Type: text/plain" --data-binary "@te
 
 curl_command = 'curl -s -X POST -H "Content-Type: text/plain" --data-binary "@tests/bpmn/pizza-collaboration.bpmn" http://localhost:8000/bpmn/svg';
 
+
+curl_command = 'curl -s -X POST -H "Content-Type: text/plain" --data-binary "@tests/d2/input.d2" http://localhost:8000/d2/svg';
 
 
 % 2. Run the command
@@ -139,3 +141,40 @@ clipboard('copy', imgstr);
 % -t, --type string       diagram type [actdiag blockdiag bpmn bytefield c4plantuml d2 diagramsnet ditaa erd excalidraw graphviz mermaid nomnoml nwdiag packetdiag pikchr plantuml rackdiag seqdiag structurizr svgbob umlet vega vegalite wavedrom] (default: infer from file extension)
 % '
 
+
+%% Moodle
+% *** info2ioxml
+% infos.xmlpath=pwd;
+% infos.fname='qfilename';
+%
+% Create question 1
+% infos.q(1).name='Q01 name';
+% infos.q(1).comment='comment for Q01';
+% infos.q(1).text='simples info';
+% infos.q(1).generalfeedback='Q01 feedback';
+% infos.q(1).idnumber='id0';
+% 
+% info2ioxml(infos)
+%
+
+infos.xmlpath=[pwd '\xmlfiles']; % xmlfiles
+infos.fname='Kroki-tests'; %  built-in Pygments styles
+
+curl_command = 'curl -s -X POST -H "Content-Type: text/plain" --data-binary "@tests/d2/input.d2" http://localhost:8000/d2/svg';
+[status, cmdout] = system(curl_command);
+infos.q(1).text=['<code>' curl_command '</code><p>' imgstr '</p>'];
+infos.q(1).name='d2';
+
+for s=1:length(pygmentsStyles)
+    disp(pygmentsStyles{s})
+    % Create description question type
+    infos.q(s).name=[num2str(s) '-' pygmentsStyles{s}];
+    infos.q(s).comment=pygmentsStyles{s};
+    % [preBlock] = highlightCode(code, language, style, hlLines, useInlineNumbers)
+    [preBlock] = highlightCode(cleanCodeLines, 'c',pygmentsStyles{s},highlightLines,true);
+    infos.q(s).text=['<code>' curl_command '</code><p>' imgstr '</p>'];
+    % infos.q(1).generalfeedback='Q01 feedback';
+    % infos.q(s).idnumber=pygmentsStyles{s};
+end
+
+info2ioxml(infos)
