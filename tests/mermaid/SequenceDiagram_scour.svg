@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="container" width="702" height="575" aria-roledescription="sequence" role="graphics-document document" viewBox="-50 -10 702 575" xmlns="http://www.w3.org/2000/svg">
+ <rect class="actor actor-bottom" x="452" y="489" width="150" height="65" rx="3" ry="3" fill="#eaeaea" stroke="#666" name="Bob"/>
+ <text class="actor actor-box" x="527" y="521.5" alignment-baseline="central" dominant-baseline="central" font-size="16px" font-weight="400" text-anchor="middle"><tspan x="527" dy="0">Bob</tspan></text>
+ <rect class="actor actor-bottom" x="249" y="489" width="150" height="65" rx="3" ry="3" fill="#eaeaea" stroke="#666" name="John"/>
+ <text class="actor actor-box" x="324" y="521.5" alignment-baseline="central" dominant-baseline="central" font-size="16px" font-weight="400" text-anchor="middle"><tspan x="324" dy="0">John</tspan></text>
+ <rect class="actor actor-bottom" y="489" width="150" height="65" rx="3" ry="3" fill="#eaeaea" stroke="#666" name="Alice"/>
+ <text class="actor actor-box" x="75" y="521.5" alignment-baseline="central" dominant-baseline="central" font-size="16px" font-weight="400" text-anchor="middle"><tspan x="75" dy="0">Alice</tspan></text>
+ <line id="actor2" class="actor-line 200" x1="527" x2="527" y1="65" y2="489" stroke="#999" stroke-width=".5px" name="Bob"/>
+ <g id="root-2">
+  <rect class="actor actor-top" x="452" width="150" height="65" rx="3" ry="3" fill="#eaeaea" stroke="#666" name="Bob"/>
+  <text class="actor actor-box" x="527" y="32.5" alignment-baseline="central" dominant-baseline="central" font-size="16px" font-weight="400" text-anchor="middle"><tspan x="527" dy="0">Bob</tspan></text>
+ </g>
+ <line id="actor1" class="actor-line 200" x1="324" x2="324" y1="65" y2="489" stroke="#999" stroke-width=".5px" name="John"/>
+ <g id="root-1">
+  <rect class="actor actor-top" x="249" width="150" height="65" rx="3" ry="3" fill="#eaeaea" stroke="#666" name="John"/>
+  <text class="actor actor-box" x="324" y="32.5" alignment-baseline="central" dominant-baseline="central" font-size="16px" font-weight="400" text-anchor="middle"><tspan x="324" dy="0">John</tspan></text>
+ </g>
+ <line id="actor0" class="actor-line 200" x1="75" x2="75" y1="65" y2="489" stroke="#999" stroke-width=".5px" name="Alice"/>
+ <g id="root-0">
+  <rect class="actor actor-top" width="150" height="65" rx="3" ry="3" fill="#eaeaea" stroke="#666" name="Alice"/>
+  <text class="actor actor-box" x="75" y="32.5" alignment-baseline="central" dominant-baseline="central" font-size="16px" font-weight="400" text-anchor="middle"><tspan x="75" dy="0">Alice</tspan></text>
+ </g>
+ <style>#container{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#container .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#container .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#container .error-icon{fill:#552222;}#container .error-text{fill:#552222;stroke:#552222;}#container .edge-thickness-normal{stroke-width:1px;}#container .edge-thickness-thick{stroke-width:3.5px;}#container .edge-pattern-solid{stroke-dasharray:0;}#container .edge-thickness-invisible{stroke-width:0;fill:none;}#container .edge-pattern-dashed{stroke-dasharray:3;}#container .edge-pattern-dotted{stroke-dasharray:2;}#container .marker{fill:#333333;stroke:#333333;}#container .marker.cross{stroke:#333333;}#container svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#container p{margin:0;}#container .actor{stroke:hsl(259.6261682243, 59.7765363128%, 87.9019607843%);fill:#ECECFF;}#container text.actor&gt;tspan{fill:black;stroke:none;}#container .actor-line{stroke:hsl(259.6261682243, 59.7765363128%, 87.9019607843%);}#container .messageLine0{stroke-width:1.5;stroke-dasharray:none;stroke:#333;}#container .messageLine1{stroke-width:1.5;stroke-dasharray:2,2;stroke:#333;}#container #arrowhead path{fill:#333;stroke:#333;}#container .sequenceNumber{fill:white;}#container #sequencenumber{fill:#333;}#container #crosshead path{fill:#333;stroke:#333;}#container .messageText{fill:#333;stroke:none;}#container .labelBox{stroke:hsl(259.6261682243, 59.7765363128%, 87.9019607843%);fill:#ECECFF;}#container .labelText,#container .labelText&gt;tspan{fill:black;stroke:none;}#container .loopText,#container .loopText&gt;tspan{fill:black;stroke:none;}#container .loopLine{stroke-width:2px;stroke-dasharray:2,2;stroke:hsl(259.6261682243, 59.7765363128%, 87.9019607843%);fill:hsl(259.6261682243, 59.7765363128%, 87.9019607843%);}#container .note{stroke:#aaaa33;fill:#fff5ad;}#container .noteText,#container .noteText&gt;tspan{fill:black;stroke:none;}#container .activation0{fill:#f4f4f4;stroke:#666;}#container .activation1{fill:#f4f4f4;stroke:#666;}#container .activation2{fill:#f4f4f4;stroke:#666;}#container .actorPopupMenu{position:absolute;}#container .actorPopupMenuPanel{position:absolute;fill:#ECECFF;box-shadow:0px 8px 16px 0px rgba(0,0,0,0.2);filter:drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));}#container .actor-man line{stroke:hsl(259.6261682243, 59.7765363128%, 87.9019607843%);fill:#ECECFF;}#container .actor-man circle,#container line{stroke:hsl(259.6261682243, 59.7765363128%, 87.9019607843%);fill:#ECECFF;stroke-width:2px;}#container :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style>
+ <defs>
+  <marker id="arrowhead" markerHeight="12" markerUnits="userSpaceOnUse" markerWidth="12" orient="auto-start-reverse" refX="7.9" refY="5">
+   <path d="m-1 0 11 5-10 5z"/>
+  </marker>
+ </defs>
+ <line class="loopLine" x1="216.5" x2="433.5" y1="123" y2="123"/>
+ <line class="loopLine" x1="433.5" x2="433.5" y1="123" y2="276"/>
+ <line class="loopLine" x1="216.5" x2="433.5" y1="276" y2="276"/>
+ <line class="loopLine" x1="216.5" x2="216.5" y1="123" y2="276"/>
+ <polygon class="labelBox" points="216.5 123 266.5 123 266.5 136 258.1 143 216.5 143"/>
+ <text class="labelText" x="242" y="136" alignment-baseline="middle" dominant-baseline="middle" font-size="16px" font-weight="400" text-anchor="middle">loop</text>
+ <text class="loopText" x="350" y="141" font-size="16px" font-weight="400" text-anchor="middle"><tspan x="350">[HealthCheck]</tspan></text>
+ <rect class="note" x="349" y="286" width="153" height="39" fill="#EDF2AE" stroke="#666"/>
+ <text class="noteText" x="426" y="291" dy="1em" alignment-baseline="middle" dominant-baseline="middle" font-size="16px" font-weight="400" text-anchor="middle"><tspan x="426">Rational thoughts!</tspan></text>
+ <text class="messageText" x="198" y="80" dy="1em" alignment-baseline="middle" dominant-baseline="middle" font-size="16px" font-weight="400" text-anchor="middle">Hello John, how are you?</text>
+ <line class="messageLine0" x1="76" x2="320" y1="113" y2="113" fill="none" marker-end="url(#arrowhead)" stroke-width="2"/>
+ <text class="messageText" x="325" y="173" dy="1em" alignment-baseline="middle" dominant-baseline="middle" font-size="16px" font-weight="400" text-anchor="middle">Fight against hypochondria</text>
+ <path class="messageLine0" d="m325 206c60-10 60 30 0 20" fill="none" marker-end="url(#arrowhead)" stroke-width="2"/>
+ <text class="messageText" x="201" y="340" dy="1em" alignment-baseline="middle" dominant-baseline="middle" font-size="16px" font-weight="400" text-anchor="middle">Great!</text>
+ <line class="messageLine1" x1="323" x2="79" y1="373" y2="373" fill="none" marker-end="url(#arrowhead)" stroke-dasharray="3, 3" stroke-width="2"/>
+ <text class="messageText" x="424" y="388" dy="1em" alignment-baseline="middle" dominant-baseline="middle" font-size="16px" font-weight="400" text-anchor="middle">How about you?</text>
+ <line class="messageLine0" x1="325" x2="523" y1="421" y2="421" fill="none" marker-end="url(#arrowhead)" stroke-width="2"/>
+ <text class="messageText" x="427" y="436" dy="1em" alignment-baseline="middle" dominant-baseline="middle" font-size="16px" font-weight="400" text-anchor="middle">Jolly good!</text>
+ <line class="messageLine1" x1="526" x2="328" y1="469" y2="469" fill="none" marker-end="url(#arrowhead)" stroke-dasharray="3, 3" stroke-width="2"/>
+</svg>

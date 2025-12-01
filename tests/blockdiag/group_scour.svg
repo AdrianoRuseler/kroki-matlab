@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.0//EN'  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg viewBox="0 0 1408 200" xmlns="http://www.w3.org/2000/svg">
+ <defs id="defs_block">
+  <filter id="filter_blur" x="-.07875" y="-.252" width="1.1575" height="1.504">
+   <feGaussianBlur id="feGaussianBlur3780" stdDeviation="4.2"/>
+  </filter>
+ </defs>
+ <title>blockdiag</title>
+ <desc>diagram {
+  group {
+    A -&gt; B -&gt; C -&gt; D;
+  }
+              C -&gt; E;
+
+  A -&gt; F -&gt; G -&gt; H;
+
+  group {
+    G;
+    H;
+  }
+}</desc>
+ <rect x="56" y="30" width="720" height="60" fill="#f39800" filter="url(#filter_blur)"/>
+ <rect x="1016" y="30" width="336" height="60" fill="#f39800" filter="url(#filter_blur)"/>
+ <rect x="67" y="46" width="128" height="40" filter="url(#filter_blur)" opacity=".7" stroke="#000"/>
+ <rect x="259" y="46" width="128" height="40" filter="url(#filter_blur)" opacity=".7" stroke="#000"/>
+ <rect x="451" y="46" width="128" height="40" filter="url(#filter_blur)" opacity=".7" stroke="#000"/>
+ <rect x="643" y="46" width="128" height="40" filter="url(#filter_blur)" opacity=".7" stroke="#000"/>
+ <rect x="835" y="46" width="128" height="40" filter="url(#filter_blur)" opacity=".7" stroke="#000"/>
+ <rect x="1027" y="46" width="128" height="40" filter="url(#filter_blur)" opacity=".7" stroke="#000"/>
+ <rect x="1219" y="46" width="128" height="40" filter="url(#filter_blur)" opacity=".7" stroke="#000"/>
+ <rect x="835" y="126" width="128" height="40" filter="url(#filter_blur)" opacity=".7" stroke="#000"/>
+ <rect x="64" y="40" width="128" height="40" fill="#fff" stroke="#000"/>
+ <text x="128.0" y="66" fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" text-anchor="middle" textLength="10">A</text>
+ <rect x="256" y="40" width="128" height="40" fill="#fff" stroke="#000"/>
+ <text x="320.0" y="66" fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" text-anchor="middle" textLength="8">B</text>
+ <rect x="448" y="40" width="128" height="40" fill="#fff" stroke="#000"/>
+ <text x="512.0" y="66" fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" text-anchor="middle" textLength="8">C</text>
+ <rect x="640" y="40" width="128" height="40" fill="#fff" stroke="#000"/>
+ <text x="704.5" y="66" fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" text-anchor="middle" textLength="9">D</text>
+ <rect x="832" y="40" width="128" height="40" fill="#fff" stroke="#000"/>
+ <text x="896.0" y="66" fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" text-anchor="middle" textLength="8">F</text>
+ <rect x="1024" y="40" width="128" height="40" fill="#fff" stroke="#000"/>
+ <text x="1088.5" y="66" fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" text-anchor="middle" textLength="9">G</text>
+ <rect x="1216" y="40" width="128" height="40" fill="#fff" stroke="#000"/>
+ <text x="1280.0" y="66" fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" text-anchor="middle" textLength="10">H</text>
+ <rect x="832" y="120" width="128" height="40" fill="#fff" stroke="#000"/>
+ <text x="896.0" y="146" fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" text-anchor="middle" textLength="8">E</text>
+ <path d="m960 60h56" fill="none" stroke="#000"/>
+ <polygon points="1023 60 1016 56 1016 64" stroke="#000"/>
+ <path d="m192 60h56" fill="none" stroke="#000"/>
+ <polygon points="255 60 248 56 248 64" stroke="#000"/>
+ <path d="m192 60h32" fill="none" stroke="#000"/>
+ <path d="m224 60v40" fill="none" stroke="#000"/>
+ <path d="m224 100h380" fill="none" stroke="#000"/>
+ <path d="m604 100a4 4 0 0 1 8 0" fill="none" stroke="#000"/>
+ <path d="m612 100h204" fill="none" stroke="#000"/>
+ <path d="m816 100v-40" fill="none" stroke="#000"/>
+ <path d="m816 60h8" fill="none" stroke="#000"/>
+ <polygon points="831 60 824 56 824 64" stroke="#000"/>
+ <path d="m384 60h56" fill="none" stroke="#000"/>
+ <polygon points="447 60 440 56 440 64" stroke="#000"/>
+ <path d="m576 60h56" fill="none" stroke="#000"/>
+ <polygon points="639 60 632 56 632 64" stroke="#000"/>
+ <path d="m576 60h32" fill="none" stroke="#000"/>
+ <path d="m608 60v80" fill="none" stroke="#000"/>
+ <path d="m608 140h216" fill="none" stroke="#000"/>
+ <polygon points="831 140 824 136 824 144" stroke="#000"/>
+ <path d="m1152 60h56" fill="none" stroke="#000"/>
+ <polygon points="1215 60 1208 56 1208 64" stroke="#000"/>
+</svg>
