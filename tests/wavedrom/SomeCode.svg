@@ -1,0 +1,15 @@
+Error 400: SyntaxError: JSON5: invalid character '(' at 1:1
+    at syntaxError (/snapshot/app/node_modules/json5/lib/parse.js:1110:17)
+    at invalidChar (/snapshot/app/node_modules/json5/lib/parse.js:1055:12)
+    at Object.value (/snapshot/app/node_modules/json5/lib/parse.js:309:15)
+    at lex (/snapshot/app/node_modules/json5/lib/parse.js:100:42)
+    at Object.parse (/snapshot/app/node_modules/json5/lib/parse.js:25:17)
+    at convert (/snapshot/app/index.js:20:24)
+    at Socket.<anonymous> (/snapshot/app/index.js:58:13)
+    at Socket.emit (node:events:530:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  lineNumber: 1,
+  columnNumber: 1
+}
+ (exit code 1)
