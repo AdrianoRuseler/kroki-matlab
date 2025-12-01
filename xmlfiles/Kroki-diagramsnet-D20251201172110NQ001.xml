@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<quiz>
+  <question type="description">
+    <name>
+      <text>diagramsnet: gitflow-examples</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<code>C:\Users\ruseler\Documents\GitHub\kroki-matlab\tests\diagramsnet\gitflow-examples.svg</code><p><img src="data:image/svg+xml;base64,RXJyb3IgNTAzOiBDb25uZWN0aW9uIHJlZnVzZWQ6IC8xMjcuMC4wLjE6ODAwNQ=="></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber/>
+  </question>
+</quiz>

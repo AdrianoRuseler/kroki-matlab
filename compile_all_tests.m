@@ -2,15 +2,7 @@
 clc
 clear all
 
-[status, cmdout] = system('curl -s http://localhost:8000/health');
-% Assuming cmdout contains the JSON string
-jsonStruct = jsondecode(cmdout);
-
-% 1. Extract the structure containing all the versions
-versionStruct = jsonStruct.version;
-
-% 2. Get a list of all field names (the tool names)
-toolNames = fieldnames(versionStruct);
+toolNames = getkrokitools();
 
 % List all files inside each targetDir and display their names
 for i = 1:length(toolNames)
@@ -52,10 +44,7 @@ end
 clc
 clear all
 
-[status, cmdout] = system('curl -s http://localhost:8000/health');
-jsonStruct = jsondecode(cmdout);
-versionStruct = jsonStruct.version;
-toolNames = fieldnames(versionStruct);
+% toolNames = getkrokitools();
 
 buildfor='ditaa'; % Change this
 targetDir = fullfile('tests/', buildfor);
@@ -96,15 +85,7 @@ clear all
 infos.xmlpath=[pwd '\xmlfiles']; % xmlfiles
 infos.fname='Kroki-tests';
 
-[status, cmdout] = system('curl -s http://localhost:8000/health');
-% Assuming cmdout contains the JSON string
-jsonStruct = jsondecode(cmdout);
-
-% 1. Extract the structure containing all the versions
-versionStruct = jsonStruct.version;
-
-% 2. Get a list of all field names (the tool names)
-toolNames = fieldnames(versionStruct);
+toolNames = getkrokitools();
 
 % List all files inside each targetDir and display their names
 q=1;
@@ -238,3 +219,33 @@ for f=1:length(svgPaths)
 end
 
 info2ioxml(infos)
+
+%% Create moodle xml file for each tool
+clc
+clear all
+
+toolNames = getkrokitools();
+% List all files inside each targetDir and display their names
+for i = 1:length(toolNames)
+    infos.xmlpath=[pwd '\xmlfiles']; % xmlfiles
+    infos.fname=['Kroki-' toolNames{i} '-'];
+
+    % Get all SVG files from folder and subfolders
+    files = dir(fullfile(['tests\' toolNames{i}], '**', '*.svg'));
+    svgPaths = fullfile({files.folder}, {files.name});
+
+    for f=1:length(svgPaths)
+        [path,name] = fileparts(svgPaths{f});
+        parts = split(path, filesep);   % split by "\" on Windows or "/" on Linux/Mac
+        lastStr = parts{end};              % "example.svg"
+
+        svgString = fileread(svgPaths{f});
+        encoded_string = matlab.net.base64encode(svgString);
+        imgstr=['<img src="data:image/svg+xml;base64,' encoded_string '">'];
+        infos.q(f).text=['<code>' svgPaths{f} '</code><p>' imgstr '</p>'];
+        infos.q(f).name=[lastStr ': ' name];
+    end
+
+    info2ioxml(infos)
+    clear infos
+end
