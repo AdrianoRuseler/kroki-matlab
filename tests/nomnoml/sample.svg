@@ -1,0 +1,23 @@
+Error 400: /snapshot/app/node_modules/nomnoml/dist/nomnoml.js:877
+            throw new ParseError(expected, actual, line, index - lineStartIndex);
+            ^
+
+ParseError: Parse error at line 2 column 23, expected "label" but got "["
+    at error (/snapshot/app/node_modules/nomnoml/dist/nomnoml.js:877:19)
+    at parseAssociation (/snapshot/app/node_modules/nomnoml/dist/nomnoml.js:744:21)
+    at parseNodesAndAssocs (/snapshot/app/node_modules/nomnoml/dist/nomnoml.js:718:53)
+    at parsePart (/snapshot/app/node_modules/nomnoml/dist/nomnoml.js:690:39)
+    at parseNode (/snapshot/app/node_modules/nomnoml/dist/nomnoml.js:779:28)
+    at parseNodesAndAssocs (/snapshot/app/node_modules/nomnoml/dist/nomnoml.js:709:24)
+    at parsePart (/snapshot/app/node_modules/nomnoml/dist/nomnoml.js:690:39)
+    at linearParse (/snapshot/app/node_modules/nomnoml/dist/nomnoml.js:657:22)
+    at parse (/snapshot/app/node_modules/nomnoml/dist/nomnoml.js:902:38)
+    at parseAndRender (/snapshot/app/node_modules/nomnoml/dist/nomnoml.js:1680:31) {
+  expected: '"label"',
+  actual: '"["',
+  line: 2,
+  column: 23
+}
+
+Node.js v22.10.0
+ (exit code 1)

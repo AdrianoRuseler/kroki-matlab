@@ -1,0 +1,45 @@
+<svg xmlns='http://www.w3.org/2000/svg' style='font-size:initial;' class="pikchr" viewBox="0 0 581.587 796.32">
+<path d="M79.6896,110.16L166.09,110.16L166.09,23.76L144.49,2.16L79.6896,2.16Z"  style="fill:none;stroke-width:2.16;stroke:rgb(0,0,0);" />
+<path d="M144.49,2.16L144.49,23.76L166.09,23.76"  style="fill:none;stroke-width:2.16;stroke:rgb(0,0,0);" />
+<text x="122.89" y="56.16" text-anchor="middle" fill="rgb(0,0,0)" dominant-baseline="central">pikchr.y</text>
+<path d="M238.09,110.16L324.49,110.16L324.49,23.76L302.89,2.16L238.09,2.16Z"  style="fill:none;stroke-width:2.16;stroke:rgb(0,0,0);" />
+<path d="M302.89,2.16L302.89,23.76L324.49,23.76"  style="fill:none;stroke-width:2.16;stroke:rgb(0,0,0);" />
+<text x="281.29" y="56.16" text-anchor="middle" fill="rgb(0,0,0)" dominant-baseline="central">lemon.c</text>
+<path d="M396.49,110.16L482.89,110.16L482.89,23.76L461.29,2.16L396.49,2.16Z"  style="fill:none;stroke-width:2.16;stroke:rgb(0,0,0);" />
+<path d="M461.29,2.16L461.29,23.76L482.89,23.76"  style="fill:none;stroke-width:2.16;stroke:rgb(0,0,0);" />
+<text x="439.69" y="56.16" text-anchor="middle" fill="rgb(0,0,0)" dominant-baseline="central">lempar.c</text>
+<polygon points="281.29,182.16 276.97,170.64 285.61,170.64" style="fill:rgb(0,0,0)"/>
+<path d="M281.29,110.16L281.29,176.4"  style="fill:none;stroke-width:2.16;stroke:rgb(0,0,0);" />
+<path d="M227.29,218.16L335.29,218.16A18 18 0 0 0 353.29 200.16A18 18 0 0 0 335.29 182.16L227.29,182.16A18 18 0 0 0 209.29 200.16A18 18 0 0 0 227.29 218.16Z"  style="fill:none;stroke-width:2.16;stroke:rgb(0,0,0);" />
+<text x="281.29" y="200.16" text-anchor="middle" fill="rgb(0,0,0)" dominant-baseline="central">C-Compiler</text>
+<polygon points="281.29,290.16 276.97,278.64 285.61,278.64" style="fill:rgb(0,0,0)"/>
+<path d="M281.29,218.16L281.29,284.4"  style="fill:none;stroke-width:2.16;stroke:rgb(0,0,0);" />
+<text x="281.29" y="242.46" text-anchor="start" fill="rgb(0,0,0)" dominant-baseline="central"> generates</text>
+<path d="M227.29,326.16L335.29,326.16A18 18 0 0 0 353.29 308.16A18 18 0 0 0 335.29 290.16L227.29,290.16A18 18 0 0 0 209.29 308.16A18 18 0 0 0 227.29 326.16Z"  style="fill:none;stroke-width:2.16;stroke:rgb(0,0,0);" />
+<text x="281.29" y="308.16" text-anchor="middle" fill="rgb(0,0,0)" dominant-baseline="central">lemon</text>
+<polygon points="214.562,295.432 203.461,290.126 209.687,284.136" style="fill:rgb(0,0,0)"/>
+<path d="M122.89,110.16 L 122.89,170.16 Q 122.89,200.16 143.69,221.778 L 189.767,269.664 L 210.568,291.281"  style="fill:none;stroke-width:2.16;stroke:rgb(0,0,0);" />
+<text x="122.89" y="190.08" text-anchor="end" fill="rgb(0,0,0)" dominant-baseline="central">Pikchr source </text>
+<text x="122.89" y="210.24" text-anchor="end" fill="rgb(0,0,0)" dominant-baseline="central">code input </text>
+<polygon points="348.018,295.432 352.892,284.136 359.118,290.126" style="fill:rgb(0,0,0)"/>
+<path d="M439.69,110.16 L 439.69,170.16 Q 439.69,200.16 418.889,221.778 L 372.812,269.664 L 352.011,291.281"  style="fill:none;stroke-width:2.16;stroke:rgb(0,0,0);" />
+<text x="439.69" y="190.08" text-anchor="start" fill="rgb(0,0,0)" dominant-baseline="central"> parser template</text>
+<text x="439.69" y="210.24" text-anchor="start" fill="rgb(0,0,0)" dominant-baseline="central"> resource file</text>
+<path d="M238.09,506.16L324.49,506.16L324.49,419.76L302.89,398.16L238.09,398.16Z"  style="fill:none;stroke-width:2.16;stroke:rgb(0,0,0);" />
+<path d="M302.89,398.16L302.89,419.76L324.49,419.76"  style="fill:none;stroke-width:2.16;stroke:rgb(0,0,0);" />
+<text x="281.29" y="452.16" text-anchor="middle" fill="rgb(0,0,0)" dominant-baseline="central">pikchr.c</text>
+<polygon points="281.29,398.16 276.97,386.64 285.61,386.64" style="fill:rgb(0,0,0)"/>
+<path d="M281.29,326.16L281.29,392.4"  style="fill:none;stroke-width:2.16;stroke:rgb(0,0,0);" />
+<polygon points="281.29,578.16 276.97,566.64 285.61,566.64" style="fill:rgb(0,0,0)"/>
+<path d="M281.29,506.16L281.29,572.4"  style="fill:none;stroke-width:2.16;stroke:rgb(0,0,0);" />
+<path d="M227.29,614.16L335.29,614.16A18 18 0 0 0 353.29 596.16A18 18 0 0 0 335.29 578.16L227.29,578.16A18 18 0 0 0 209.29 596.16A18 18 0 0 0 227.29 614.16Z"  style="fill:none;stroke-width:2.16;stroke:rgb(0,0,0);" />
+<text x="281.29" y="596.16" text-anchor="middle" fill="rgb(0,0,0)" dominant-baseline="central">C-Compiler</text>
+<polygon points="281.29,686.16 276.97,674.64 285.61,674.64" style="fill:rgb(0,0,0)"/>
+<path d="M281.29,614.16L281.29,680.4"  style="fill:none;stroke-width:2.16;stroke:rgb(0,0,0);" />
+<path d="M233.77,794.16L328.81,794.16L328.81,707.76L307.21,686.16L233.77,686.16Z"  style="fill:none;stroke-width:2.16;stroke:rgb(0,0,0);" />
+<path d="M307.21,686.16L307.21,707.76L328.81,707.76"  style="fill:none;stroke-width:2.16;stroke:rgb(0,0,0);" />
+<text x="281.29" y="720" text-anchor="middle" fill="rgb(0,0,0)" dominant-baseline="central">pikchr.o</text>
+<text x="281.29" y="740.16" text-anchor="middle" fill="rgb(0,0,0)" dominant-baseline="central">or</text>
+<text x="281.29" y="760.32" text-anchor="middle" fill="rgb(0,0,0)" dominant-baseline="central">pikchr.exe</text>
+</svg>
+
