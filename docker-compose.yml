@@ -27,3 +27,8 @@ services:
     image: yuzutech/kroki-excalidraw
     expose:
       - "8004"
+      #yuzutech/kroki-diagramsnet (experimental)
+      #diagramsnet:
+      #  image: yuzutech/kroki-diagramsnet
+      #  expose:
+      #    - "8005"
