@@ -57,7 +57,7 @@ jsonStruct = jsondecode(cmdout);
 versionStruct = jsonStruct.version;
 toolNames = fieldnames(versionStruct);
 
-buildfor='diagramsnet'; % Change this
+buildfor='graphviz'; % Change this
 targetDir = fullfile('tests/', buildfor);
 % List all files inside each targetDir and display their names
 files = dir(targetDir);
