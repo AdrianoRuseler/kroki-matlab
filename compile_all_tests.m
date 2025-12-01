@@ -57,7 +57,7 @@ jsonStruct = jsondecode(cmdout);
 versionStruct = jsonStruct.version;
 toolNames = fieldnames(versionStruct);
 
-buildfor='c4plantuml'; % Change this
+buildfor='dbml'; % Change this
 targetDir = fullfile('tests/', buildfor);
 % List all files inside each targetDir and display their names
 files = dir(targetDir);
