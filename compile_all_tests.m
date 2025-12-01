@@ -57,7 +57,7 @@ jsonStruct = jsondecode(cmdout);
 versionStruct = jsonStruct.version;
 toolNames = fieldnames(versionStruct);
 
-buildfor='graphviz'; % Change this
+buildfor='seqdiag'; % Change this
 targetDir = fullfile('tests/', buildfor);
 % List all files inside each targetDir and display their names
 files = dir(targetDir);

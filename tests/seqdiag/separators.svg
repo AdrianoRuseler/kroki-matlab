@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg viewBox="0 0 448 454" xmlns="http://www.w3.org/2000/svg" xmlns:inkspace="http://www.inkscape.org/namespaces/inkscape" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs id="defs_block">
+    <filter height="1.504" id="filter_blur" inkspace:collect="always" width="1.1575" x="-0.07875" y="-0.252">
+      <feGaussianBlur id="feGaussianBlur3780" inkspace:collect="always" stdDeviation="4.2" />
+    </filter>
+  </defs>
+  <title>blockdiag</title>
+  <desc>seqdiag {
+  A -&gt; B;
+
+  // Separator
+  === Separator line ===
+
+  A -&gt; B;
+
+  // Delay separator
+  ... Separator line ...
+
+  A -&gt; B;
+}
+</desc>
+  <rect fill="rgb(0,0,0)" height="306" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="8" x="127" y="126" />
+  <rect fill="rgb(0,0,0)" height="306" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="8" x="319" y="126" />
+  <rect fill="rgb(0,0,0)" height="176" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="8" x="323" y="256" />
+  <rect fill="rgb(0,0,0)" height="46" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="8" x="327" y="386" />
+  <rect fill="rgb(0,0,0)" height="40" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="128" x="67" y="46" />
+  <rect fill="rgb(0,0,0)" height="40" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="128" x="259" y="46" />
+  <path d="M 128 80 L 128 300" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="8 4" />
+  <path d="M 128 308 L 128 332" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2 8" />
+  <path d="M 128 340 L 128 442" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="8 4" />
+  <rect fill="moccasin" height="306" stroke="rgb(0,0,0)" width="8" x="124" y="120" />
+  <path d="M 320 80 L 320 300" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="8 4" />
+  <path d="M 320 308 L 320 332" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2 8" />
+  <path d="M 320 340 L 320 442" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="8 4" />
+  <rect fill="moccasin" height="306" stroke="rgb(0,0,0)" width="8" x="316" y="120" />
+  <rect fill="moccasin" height="176" stroke="rgb(0,0,0)" width="8" x="320" y="250" />
+  <rect fill="moccasin" height="46" stroke="rgb(0,0,0)" width="8" x="324" y="380" />
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" width="128" x="64" y="40" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="10" x="128.0" y="66">A</text>
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" width="128" x="256" y="40" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="8" x="320.0" y="66">B</text>
+  <path d="M 136 120 L 312 120" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="304,116 312,120 304,124" stroke="rgb(0,0,0)" />
+  <path d="M 136 250 L 312 250" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="304,246 312,250 304,254" stroke="rgb(0,0,0)" />
+  <path d="M 136 380 L 312 380" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="304,376 312,380 304,384" stroke="rgb(0,0,0)" />
+  <path d="M 40 187 L 174 187" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 40 191 L 174 191" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 274 187 L 408 187" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 274 191 L 408 191" fill="none" stroke="rgb(0,0,0)" />
+  <rect fill="rgb(208,208,208)" height="21" stroke="rgb(0,0,0)" width="100" x="174" y="179" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="80" x="224.0" y="196">Separator line</text>
+  <rect fill="white" height="21" stroke="white" width="100" x="174" y="309" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="80" x="224.0" y="326">Separator line</text>
+</svg>
