@@ -48,13 +48,14 @@ for i = 1:length(toolNames)
         else
             fprintf(fid, '# %s\n\nVersion: %s\n', tool, toolVersion);
         end
-
-
         fclose(fid);
     else
         disp(['Error creating README.md for ', tool]);
     end
 end
+
+
+
 
 % Prepare to execute the curl commands for each tool
 for i = 1:length(toolNames)
@@ -93,6 +94,9 @@ curl_command = 'curl -s -X POST -H "Content-Type: text/plain" --data-binary "@te
 
 
 curl_command = 'curl -s -X POST -H "Content-Type: text/plain" --data-binary "@tests/d2/input.d2" http://localhost:8000/d2/svg';
+
+
+curl_command = 'curl -s -X POST -H "Content-Type: text/plain" --data-binary "@tests/wavedrom/signal-step4.json5" http://localhost:8000/wavedrom/svg';
 
 
 % 2. Run the command
@@ -153,7 +157,7 @@ clipboard('copy', imgstr);
 % infos.q(1).text='simples info';
 % infos.q(1).generalfeedback='Q01 feedback';
 % infos.q(1).idnumber='id0';
-% 
+%
 % info2ioxml(infos)
 %
 
@@ -162,8 +166,11 @@ infos.fname='Kroki-tests'; %  built-in Pygments styles
 
 curl_command = 'curl -s -X POST -H "Content-Type: text/plain" --data-binary "@tests/d2/input.d2" http://localhost:8000/d2/svg';
 [status, cmdout] = system(curl_command);
+% 1. Encoding a string
+encoded_string = matlab.net.base64encode(cmdout);
+imgstr=['<img src="data:image/svg+xml;base64,' encoded_string '">'];
 infos.q(1).text=['<code>' curl_command '</code><p>' imgstr '</p>'];
-infos.q(1).name='d2';
+infos.q(1).name='wavedrom';
 
 for s=1:length(pygmentsStyles)
     disp(pygmentsStyles{s})

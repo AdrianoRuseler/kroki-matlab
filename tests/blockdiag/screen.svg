@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg viewBox="0 0 1024 440" xmlns="http://www.w3.org/2000/svg" xmlns:inkspace="http://www.inkscape.org/namespaces/inkscape" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs id="defs_block">
+    <filter height="1.504" id="filter_blur" inkspace:collect="always" width="1.1575" x="-0.07875" y="-0.252">
+      <feGaussianBlur id="feGaussianBlur3780" inkspace:collect="always" stdDeviation="4.2" />
+    </filter>
+  </defs>
+  <title>blockdiag</title>
+  <desc>diagram admin {
+  top_page [label = "Top page", color = "pink"];
+
+  group foo {
+    foo_index [label = "List of FOOs"];
+    foo_detail [label = "Detail FOO", style = "dashed"];
+    foo_add [label = "Add FOO"];
+    foo_add_confirm [label = "Add FOO (confirm)"];
+    foo_edit [label = "Edit FOO"];
+    foo_edit_confirm [label = "Edit FOO (confirm)"];
+    foo_delete_confirm [label = "Delete FOO (confirm)"];
+  }
+
+  group bar {
+    bar_detail [label = "Detail of BAR", style = "dotted"];
+    bar_edit [label = "Edit BAR"];
+    bar_edit_confirm [label = "Edit BAR (confirm)"];
+  }
+
+  logout;
+
+  top_page -&gt; foo_index [color = "red", dir = none, label = "button"];
+  top_page -&gt; bar_detail [style = dashed, label = "link"];
+
+  foo_index -&gt; foo_detail;
+               foo_detail -&gt; foo_edit;
+               foo_detail -&gt; foo_delete_confirm;
+  foo_index -&gt; foo_add -&gt; foo_add_confirm;
+                          foo_add_confirm -&gt; foo_index [label = "added"];
+  foo_index -&gt; foo_edit -&gt; foo_edit_confirm;
+                           foo_edit_confirm -&gt; foo_index [label = "changed"];
+  foo_index -&gt; foo_delete_confirm;
+               foo_delete_confirm -&gt; foo_index [label = "deleted"];
+
+  bar_detail -&gt; bar_edit -&gt; bar_edit_confirm -&gt; bar_detail [dir = both, style = dotted];
+
+  foo_index -&gt; foo_edit [style = dotted];
+}
+</desc>
+  <rect fill="rgb(243,152,0)" height="220" style="filter:url(#filter_blur)" width="720" x="248" y="30" />
+  <rect fill="rgb(243,152,0)" height="60" style="filter:url(#filter_blur)" width="528" x="248" y="270" />
+  <rect fill="rgb(0,0,0)" height="40" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="128" x="67" y="46" />
+  <rect fill="rgb(0,0,0)" height="40" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="128" x="259" y="46" />
+  <rect fill="rgb(0,0,0)" height="40" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="128" x="451" y="46" />
+  <rect fill="rgb(0,0,0)" height="40" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="128" x="451" y="206" />
+  <rect fill="rgb(0,0,0)" height="40" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="128" x="643" y="206" />
+  <rect fill="rgb(0,0,0)" height="40" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="128" x="643" y="46" />
+  <rect fill="rgb(0,0,0)" height="40" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="128" x="643" y="126" />
+  <rect fill="rgb(0,0,0)" height="40" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="128" x="835" y="46" />
+  <rect fill="rgb(0,0,0)" height="40" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="128" x="259" y="286" />
+  <rect fill="rgb(0,0,0)" height="40" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="128" x="451" y="286" />
+  <rect fill="rgb(0,0,0)" height="40" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="128" x="643" y="286" />
+  <rect fill="rgb(0,0,0)" height="40" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="128" x="67" y="366" />
+  <rect fill="rgb(255,192,203)" height="40" stroke="rgb(0,0,0)" width="128" x="64" y="40" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="51" x="128.5" y="67">Top page</text>
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" width="128" x="256" y="40" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="70" x="320.0" y="66">List of FOOs</text>
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" stroke-dasharray="4" width="128" x="448" y="40" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="63" x="512.5" y="66">Detail FOO</text>
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" width="128" x="448" y="200" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="52" x="512.0" y="226">Add FOO</text>
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" width="128" x="640" y="200" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="107" x="704.5" y="226">Add FOO (confirm)</text>
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" width="128" x="640" y="40" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="52" x="704.0" y="66">Edit FOO</text>
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" width="128" x="640" y="120" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="120" x="704.0" y="146">Delete FOO (confirm)</text>
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" width="128" x="832" y="40" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="107" x="896.5" y="66">Edit FOO (confirm)</text>
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" stroke-dasharray="2" width="128" x="256" y="280" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="76" x="320.0" y="306">Detail of BAR</text>
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" width="128" x="448" y="280" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="52" x="512.0" y="306">Edit BAR</text>
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" width="128" x="640" y="280" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="106" x="704.0" y="306">Edit BAR (confirm)</text>
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" width="128" x="64" y="360" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="36" x="128.0" y="387">logout</text>
+  <path d="M 192 60 L 256 60" fill="none" stroke="rgb(255,0,0)" />
+  <path d="M 192 60 L 224 60" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="4" />
+  <path d="M 224 60 L 224 300" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="4" />
+  <path d="M 224 300 L 248 300" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="4" />
+  <polygon fill="rgb(0,0,0)" points="255,300 248,296 248,304 255,300" stroke="rgb(0,0,0)" />
+  <path d="M 384 60 L 440 60" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="447,60 440,56 440,64 447,60" stroke="rgb(0,0,0)" />
+  <path d="M 384 60 L 416 60" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 416 60 L 416 220" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 416 220 L 440 220" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="447,220 440,216 440,224 447,220" stroke="rgb(0,0,0)" />
+  <path d="M 384 60 L 416 60" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
+  <path d="M 416 60 L 416 100" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
+  <path d="M 416 100 L 604.0 100" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
+  <path d="M 604.0 100.0 A4.0,4.0 0 0 1 612.0 100.0" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
+  <path d="M 612.0 100 L 624 100" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
+  <path d="M 624 100 L 624 60" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
+  <path d="M 624 60 L 632 60" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
+  <polygon fill="rgb(0,0,0)" points="639,60 632,56 632,64 639,60" stroke="rgb(0,0,0)" />
+  <path d="M 384 60 L 416 60" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 416 60 L 416 140" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 416 140 L 632 140" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="639,140 632,136 632,144 639,140" stroke="rgb(0,0,0)" />
+  <path d="M 576 60 L 632 60" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="639,60 632,56 632,64 639,60" stroke="rgb(0,0,0)" />
+  <path d="M 576 60 L 608 60" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 608 60 L 608 140" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 608 140 L 632 140" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="639,140 632,136 632,144 639,140" stroke="rgb(0,0,0)" />
+  <path d="M 576 220 L 632 220" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="639,220 632,216 632,224 639,220" stroke="rgb(0,0,0)" />
+  <path d="M 768 220 L 784 220" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 784 220 L 784 25" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 320 25 L 784 25" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 320 25 L 320 32" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="320,39 316,32 324,32 320,39" stroke="rgb(0,0,0)" />
+  <path d="M 768 60 L 780.0 60" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 780.0 60.0 A4.0,4.0 0 0 1 788.0 60.0" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 788.0 60 L 824 60" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="831,60 824,56 824,64 831,60" stroke="rgb(0,0,0)" />
+  <path d="M 960 60 L 976 60" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 976 60 L 976 25" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 320 25 L 976 25" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 320 25 L 320 32" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="320,39 316,32 324,32 320,39" stroke="rgb(0,0,0)" />
+  <path d="M 768 140 L 784 140" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 784 140 L 784 25" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 320 25 L 784 25" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 320 25 L 320 32" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="320,39 316,32 324,32 320,39" stroke="rgb(0,0,0)" />
+  <path d="M 392 300 L 440 300" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
+  <polygon fill="rgb(0,0,0)" points="385,300 392,296 392,304 385,300" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="447,300 440,296 440,304 447,300" stroke="rgb(0,0,0)" />
+  <path d="M 584 300 L 632 300" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
+  <polygon fill="rgb(0,0,0)" points="577,300 584,296 584,304 577,300" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="639,300 632,296 632,304 639,300" stroke="rgb(0,0,0)" />
+  <path d="M 776 300 L 784 300" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
+  <path d="M 784 300 L 784 265" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
+  <path d="M 320 265 L 784 265" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
+  <path d="M 320 265 L 320 272" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
+  <polygon fill="rgb(0,0,0)" points="769,300 776,296 776,304 769,300" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="320,279 316,272 324,272 320,279" stroke="rgb(0,0,0)" />
+  <rect fill="white" height="15" stroke="rgb(0,0,0)" width="53" x="198" y="38" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="37" x="224.5" y="51">button</text>
+  <rect fill="white" height="15" stroke="rgb(0,0,0)" width="37" x="206" y="278" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="21" x="224.5" y="291">link</text>
+  <rect fill="white" height="15" stroke="rgb(0,0,0)" width="50" x="759" y="183" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="34" x="784.0" y="196">added</text>
+  <rect fill="white" height="17" stroke="rgb(0,0,0)" width="63" x="913" y="2" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="47" x="944.5" y="17">changed</text>
+  <rect fill="white" height="15" stroke="rgb(0,0,0)" width="58" x="755" y="103" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="42" x="784.0" y="116">deleted</text>
+</svg>
