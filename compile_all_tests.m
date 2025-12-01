@@ -46,7 +46,7 @@ clear all
 
 % toolNames = getkrokitools();
 
-buildfor='wireviz'; % Change this
+buildfor='vegalite'; % Change this
 targetDir = fullfile('tests/', buildfor);
 % List all files inside each targetDir and display their names
 files = dir(targetDir);
@@ -69,6 +69,12 @@ for f=1:length(files)
             fwrite(fidSvg, cmdout);
             fclose(fidSvg);
             disp(['SVG file saved: ', svgFilePath]);
+            isValid = verifySVG(svgFilePath);
+            if ~isValid
+                disp(['Invalid SVG file: ', svgFilePath]);
+                delete(svgFilePath)
+                delete(fullfile(targetDir, files(f).name))
+            end
         else
             disp(['Error saving SVG file for ', files(f).name]);
         end
@@ -136,7 +142,7 @@ for f=1:length(svgPaths)
     isValid = verifySVG(svgPaths{f});
 end
 
-    
+
 %% SVG inkscape convert
 
 clc
