@@ -48,6 +48,47 @@ for i = 1:length(toolNames)
     end
 end
 
+%% Creates SVG files for specific tool
+clc
+clear all
+
+[status, cmdout] = system('curl -s http://localhost:8000/health');
+jsonStruct = jsondecode(cmdout);
+versionStruct = jsonStruct.version;
+toolNames = fieldnames(versionStruct);
+
+buildfor='bytefield'; % Change this
+targetDir = fullfile('tests/', buildfor);
+% List all files inside each targetDir and display their names
+files = dir(targetDir);
+% Exclude the current directory and parent directory from the list
+files = files(~ismember({files.name}, {'.', '..'}));
+files = files(~endsWith({files.name}, {'.md','.svg'})); % Exclude .md and .svg files from the list
+
+% Create curl command for each file
+for f=1:length(files)
+    % Execute the curl command for the current file
+    curl_command = sprintf('curl -s -X POST -H "Content-Type: text/plain" --data-binary "@%s" http://localhost:8000/%s/svg', fullfile(targetDir, files(f).name), buildfor);
+    [status, cmdout] = system(curl_command);
+    if status == 0
+        % disp(['Curl command for ', toolNames{i}, ' executed successfully.']);
+        % Save cmdout as an SVG file
+        [~,name] = fileparts(files(f).name);
+        svgFilePath = fullfile(targetDir, [name, '.svg']);
+        fidSvg = fopen(svgFilePath, 'w');
+        if fidSvg ~= -1
+            fwrite(fidSvg, cmdout);
+            fclose(fidSvg);
+            disp(['SVG file saved: ', svgFilePath]);
+        else
+            disp(['Error saving SVG file for ', files(f).name]);
+        end
+    else
+        disp(['Error executing curl command for ', buildfor, '. Status: ', num2str(status)]);
+    end
+end
+
+
 %% Create info quiz
 clc
 clear all
