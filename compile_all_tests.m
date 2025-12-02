@@ -46,7 +46,7 @@ clear all
 
 % toolNames = getkrokitools();
 
-buildfor='excalidraw'; % Change this
+buildfor='symbolator'; % Change this
 targetDir = fullfile('tests/', buildfor);
 % List all files inside each targetDir and display their names
 files = dir(targetDir);
