@@ -83,7 +83,6 @@ for f=1:length(files)
     end
 end
 
-
 %% Create info quiz
 clc
 clear all
