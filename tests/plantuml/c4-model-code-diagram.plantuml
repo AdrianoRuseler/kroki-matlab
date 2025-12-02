@@ -1,0 +1,71 @@
+' The C4 PlantUML example here is thanks to the C4 PlantUML team.
+' The UML is copied from the "Big Bank with Icons" example.
+'
+' C4 PlantUML repository:
+' https://github.com/plantuml-stdlib/C4-PlantUML/
+'
+' C4 PlantUML samples:
+' https://github.com/plantuml-stdlib/C4-PlantUML/tree/master/samples
+'
+' You can include the C4 PlantUML file in various ways.
+'
+' To include the default way, uncomment this line:
+' !include <C4/C4_Container>
+'
+' To include the remote file, uncomment this line:
+' !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Code.puml
+'
+' To include a local file, uncomment this line:
+' !include C4_Component.puml
+ 
+@startuml
+hide circle
+
+title C4 Model - Code diagram
+
+' As of 2024-12-01, the C4 PlantUML repository doesn't offer a C4_Code.puml file,
+' that would be similar to the C4_Context.puml or C4_Container.puml files.
+'
+' We hope that the C4 PlantUML team will provide a C4_Code.puml file in the future,
+' so we're including the C4_Code.puml file and LAYOUT_WITH_LEGEND in the comments.
+'
+' !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Code.puml
+' uncomment the following line and comment the first to use locally
+' !include C4_Code.puml
+'
+' LAYOUT_WITH_LEGEND()
+
+entity user {
+    id
+    name: string
+    email: string
+    organization_id: organization.id
+}
+
+entity reads {
+    user.id
+    book.id
+}
+
+entity book {
+    title: string
+    pages: int
+}
+
+entity writes {
+    book.id
+    author.id
+}
+
+entity author {
+    name: string
+    birth_date: date
+}
+
+user ||-d-o{ reads
+book ||-u-o{ reads
+
+book ||-d-o{ writes
+author ||-u-o{ writes
+
+@enduml

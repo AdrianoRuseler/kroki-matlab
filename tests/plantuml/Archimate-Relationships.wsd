@@ -1,0 +1,81 @@
+@startuml
+
+!global $ARCH_LOCAL = %true()
+!global $ARCH_DEBUG = %false()
+
+!if ($ARCH_LOCAL == %false())
+    !include <archimate/Archimate>
+    '!theme archimate-alternate from <archimate/themes>
+    '!theme archimate-handwriting from <archimate/themes>
+    '!theme archimate-lowsaturation from <archimate/themes>
+    '!theme archimate-saturated from <archimate/themes>
+    '!theme archimate-standard from <archimate/themes>
+!else
+    ' use these includes for local testing
+    !$LOCAL_FOLDER = "../dist/plantuml-stdlib/stdlib/archimate"
+    !include $LOCAL_FOLDER/Archimate.puml
+    '!theme archimate-alternate from $LOCAL_FOLDER/themes
+    '!theme archimate-handwriting from $LOCAL_FOLDER/themes
+    '!theme archimate-lowsaturation from $LOCAL_FOLDER/themes
+    '!theme archimate-saturated from $LOCAL_FOLDER/themes
+    '!theme archimate-standard from $LOCAL_FOLDER/themes
+!endif
+
+skinparam nodesep 4
+left to right direction
+
+!procedure Draw($name, $raw, $rawOverride="")
+    !if ($rawOverride == "")
+        !$showRaw = $raw
+    !else
+        !$showRaw = $rawOverride
+    !endif
+    label $name
+    label "$showRaw" <<mono>> as a$name
+    $name $raw a$name
+!endprocedure
+
+hide stereotype
+<style>
+.mono {
+    FontName monospaced
+}
+</style>
+
+legend left
+Usage:
+**Rel_XXX(from, to, label)**
+or by using raw arrows: A **arrow** B
+end legend
+
+rectangle "Other Relationships" as other {
+    circle "Junction Or\ncircle id" <<junction>> as c1
+    circle #black "Junction And\ncircle #black id" <<junction>> as c2
+    c1 -[hidden]- c2
+    Draw(Specialisation, "--|>")
+}
+
+rectangle "Dynamic Dependencies" as dynamic {
+    Draw(Flow, "..>>")
+    Draw(Triggering, "-->>")
+}
+
+rectangle "Dependency Relationships" as dependency {
+    Draw(Association_dir, "--\\", "--\\\\")
+    Draw(Association, " --")
+    Draw(Influence, "..>")
+    Draw(Access_rw, "<-[dotted]->")
+    Draw(Access_w, "-[dotted]->")
+    Draw(Access_r, "<-[dotted]-")
+    Draw(Access, "-[dotted]-")
+    Draw(Serving, "-->")
+}
+
+rectangle "Structural Relationships" as structural {
+    Draw(Realisation, "-[dotted]-|>")
+    Draw(Assignment, "@-->>")
+    Draw(Aggregation, "o--")
+    Draw(Composition, "*--")
+}
+
+@enduml
