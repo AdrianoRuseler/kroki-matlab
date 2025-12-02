@@ -46,7 +46,7 @@ clear all
 
 % toolNames = getkrokitools();
 
-buildfor='structurizr'; % Change this
+buildfor='excalidraw'; % Change this
 targetDir = fullfile('tests/', buildfor);
 % List all files inside each targetDir and display their names
 files = dir(targetDir);
