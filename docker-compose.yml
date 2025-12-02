@@ -6,10 +6,12 @@ services:
       - mermaid
       - bpmn
       - excalidraw
+      - diagramsnet
     environment:
       - KROKI_MERMAID_HOST=mermaid
       - KROKI_BPMN_HOST=bpmn
       - KROKI_EXCALIDRAW_HOST=excalidraw
+      - KROKI_DIAGRAMSNET_HOST=diagramsnet
     ports:
       - "8000:8000"
     # If you do need to explicitly mount /tmp, make sure to include the exec option
@@ -27,8 +29,8 @@ services:
     image: yuzutech/kroki-excalidraw
     expose:
       - "8004"
-      #yuzutech/kroki-diagramsnet (experimental)
-      #diagramsnet:
-      #  image: yuzutech/kroki-diagramsnet
-      #  expose:
-      #    - "8005"
+  #yuzutech/kroki-diagramsnet (experimental)
+  diagramsnet:
+    image: yuzutech/kroki-diagramsnet
+    expose:
+      - "8005"
