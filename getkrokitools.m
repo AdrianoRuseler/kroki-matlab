@@ -1,4 +1,4 @@
-function toolNames = getkrokitools()
+function [toolNames, cmdout]= getkrokitools()
 
 [status, cmdout] = system('curl -s http://localhost:8000/health');
 if status ~= 0

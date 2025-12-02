@@ -46,7 +46,7 @@ clear all
 
 % toolNames = getkrokitools();
 
-buildfor='diagramsnet'; % Change this
+buildfor='tikz'; % Change this
 targetDir = fullfile('tests/', buildfor);
 % List all files inside each targetDir and display their names
 files = dir(targetDir);
@@ -254,3 +254,5 @@ for i = 1:length(toolNames)
     info2ioxml(infos)
     clear infos
 end
+
+% [toolNames, cmdout] = getkrokitools();
