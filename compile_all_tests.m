@@ -109,6 +109,7 @@ for i = 1:length(toolNames)
     for f=1:length(files)
         % Execute the curl command for the current file
         curl_command = sprintf('curl -s -X POST -H "Content-Type: text/plain" --data-binary "@%s" http://localhost:8000/%s/svg', fullfile(targetDir, files(f).name), toolNames{i});
+        disp(curl_command)
         [status, cmdout] = system(curl_command);
         if status == 0
             encoded_string = matlab.net.base64encode(cmdout);
