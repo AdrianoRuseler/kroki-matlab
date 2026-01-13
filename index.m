@@ -1,6 +1,10 @@
 clc
 clear all
 
+% Add -k flag to allow self-signed certificates
+[status, cmdout] = system('curl -k -s https://kroki.mini.pc/health');
+
+
 [status, cmdout] = system('curl -s http://localhost:8000/health');
 % Assuming cmdout contains the JSON string
 jsonStruct = jsondecode(cmdout);
