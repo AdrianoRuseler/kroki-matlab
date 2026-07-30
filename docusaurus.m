@@ -7,6 +7,9 @@ clear all
 % getToolInfo returns Name, Category, and Domain metadata for tool IDs
 toolInfos = getToolInfo(toolsID);
 
+
+toolInfos = getToolInfo('dot');
+
 % getToolTable returns a summary table for a list of tool IDs
 toolTable = getToolTable(toolsID);
 
@@ -18,9 +21,12 @@ addToolCategoryJson(toolsID)
 
 addDomainIntroMdx()
 
-
 domainKeys = {'general','architecture','infrastructure','database','hardware','dataviz','ascii'};
 AddNavBar(domainKeys)
+
+
+generateToolSvgs(toolsID)
+
 % for t=1:numel(toolInfos)
 %     createKrokiFolders(toolsID{t})
 % end
@@ -47,6 +53,7 @@ samples = getToolSample('dot');
 
 disp(samples)
 
+%% 
 
 disp('--- All Tool Versions ---');
 for i = 1:length(toolNames)
