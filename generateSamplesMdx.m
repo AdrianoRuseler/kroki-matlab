@@ -39,7 +39,7 @@ function generateSamplesMdx(toolsID)
         end
 
         % Header
-        fprintf(fid, '# %s Samples\n\n', info.Name);
+        fprintf(fid, '# Samples\n\n');
 
         % Loop through samples
         for i = 1:numel(samples)
