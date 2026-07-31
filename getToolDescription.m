@@ -65,7 +65,7 @@ switch lower(toolid)
         info.docs = 'https://pgf-tikz.github.io/';
         info.source = 'https://github.com/pgf-tikz/pgf';
         info.editor = 'https://tikz.dev/editor/web/';
-        info.samples = 'https://github.com/pgf-tikz/pgf';
+        info.samples = 'https://tikz.dev/';
         info.pos = '9';
 
         % --- Software Architecture & Modeling ---
