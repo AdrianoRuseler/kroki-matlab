@@ -4,3 +4,6 @@
 *.fig
 *.mlx
 *.asv
+
+# Ignore kroki-docs folder
+kroki-docs
