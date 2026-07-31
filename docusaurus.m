@@ -27,7 +27,9 @@ AddNavBar(domainKeys)
 
 generateToolSvgs(toolsID)
 
-% copyToolSamples('dot')
+% copyToolSamples('bpmn')
+% generateSamplesMdx('bpmn')
+
 copyToolSamples(toolsID)
 
 % https://github.com/mermaid-js/mermaid
