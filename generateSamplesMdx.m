@@ -1,52 +1,64 @@
-function generateSamplesMdx(toolID)
-% generateSamplesMdx creates samples.mdx for Docusaurus
-% Displays source code and linked SVG image for each sample
-%
-% Input: toolID (string)
+function generateSamplesMdx(toolsID)
+    % generateSamplesMdx creates samples.mdx for one or more tools
+    % Displays source code and linked SVG image for each sample
+    %
+    % Input: toolsID (string or cell array of strings)
+    %
+    % Example: generateSamplesMdx({'dot','mermaid','plantuml'})
 
-% Get tool info (includes TargetDir)
-%  toolID = 'dot' % Test
-info = getToolInfo(toolID);
+    % Normalize input to a cell array
+    if ischar(toolsID) || isstring(toolsID)
+        toolsID = {char(toolsID)};
+    elseif ~iscell(toolsID)
+        error('toolsID must be a string or a cell array of tool IDs');
+    end
 
-% Ensure samples folder exists
-samplesDir = fullfile(info.TargetDir, 'samples');
-if ~exist(samplesDir, 'dir')
-    warning('Samples folder does not exist: %s', samplesDir);
-    return;
-end
+    % Loop through each tool ID
+    for t = 1:numel(toolsID)
+        toolID = char(toolsID{t});
+        info = getToolInfo(toolID);
 
-% Get samples
-samples = getToolSample(toolID);
+        % Ensure samples folder exists
+        samplesDir = fullfile(info.TargetDir, 'samples');
+        if ~exist(samplesDir, 'dir')
+            warning('Samples folder does not exist: %s', samplesDir);
+            continue;
+        end
 
-% Path for samples.mdx
-mdxPath = fullfile(info.TargetDir, 'samples.mdx');
+        % Get samples (struct array with FileName, Content, SvgExists)
+        samples = getToolSample(toolID);
 
-% Write MDX file
-fid = fopen(mdxPath, 'w');
-if fid == -1
-    warning('Could not create samples.mdx in %s', info.TargetDir);
-    return;
-end
+        % Path for samples.mdx
+        mdxPath = fullfile(info.TargetDir, 'samples.mdx');
 
-fprintf(fid, '# %s Samples\n\n', info.Name);
+        % Write MDX file
+        fid = fopen(mdxPath, 'w');
+        if fid == -1
+            warning('Could not create samples.mdx in %s', info.TargetDir);
+            continue;
+        end
 
-for i = 1:numel(samples)
-    fprintf(fid, '## %s\n\n', samples(i).FileName);
+        % Header
+        fprintf(fid, '# %s Samples\n\n', info.Name);
 
-    % Source code block
-    fprintf(fid, '```%s\n', info.ID);
-    fprintf(fid, '%s\n', samples(i).Content);
-    fprintf(fid, '```\n\n');
+        % Loop through samples
+        for i = 1:numel(samples)
+            fprintf(fid, '## %s\n\n', samples(i).FileName);
 
-    % If SVG exists, embed image
-    if samples(i).SvgExists
-        [filepath, name, ~] = fileparts(samples(i).FileName);
-        svgFile = fullfile(filepath, [name '.svg']);
-        fprintf(fid, '![%s](./samples/%s)\n\n', svgFile, svgFile);
+            % Source code block
+            fprintf(fid, '```%s\n', info.ID);
+            fprintf(fid, '%s\n', samples(i).Content);
+            fprintf(fid, '```\n\n');
+
+            % If SVG exists, embed image
+            if samples(i).SvgExists
+                [~, name, ~] = fileparts(samples(i).FileName);
+                svgFile = [name '.svg'];
+                fprintf(fid, '![%s](./samples/%s)\n\n', name, svgFile);
+            end
+        end
+
+        fclose(fid);
+        fprintf('Created samples.mdx in: %s\n', info.TargetDir);
     end
 end
-
-fclose(fid);
-fprintf('Created samples.mdx in: %s\n', info.TargetDir);
-end
-
