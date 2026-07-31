@@ -9,7 +9,7 @@ toolInfos = getToolInfo(toolsID);
 
 
 toolInfos = getToolInfo('dot');
-
+addToolIntro('dot'); 
 % getToolTable returns a summary table for a list of tool IDs
 toolTable = getToolTable(toolsID);
 
@@ -27,6 +27,14 @@ AddNavBar(domainKeys)
 
 generateToolSvgs(toolsID)
 
+% copyToolSamples('dot')
+copyToolSamples(toolsID)
+
+% https://github.com/mermaid-js/mermaid
+% activityInfo = getGitHubRepoActivity('mermaid-js', 'mermaid')
+
+
+
 % for t=1:numel(toolInfos)
 %     createKrokiFolders(toolsID{t})
 % end
@@ -43,7 +51,8 @@ addToolReadme('dot');
 
 % samples = getToolSample('dot');
 
-generateSamplesMdx('dot')
+generateSamplesMdx(toolsID)
+
 addToolCategoryJson('dot')
 
 
